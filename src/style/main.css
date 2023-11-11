@@ -1,0 +1,129 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fc1e8a;
+    user-select: none;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(325deg, #03001e 0%, #7303c0 30%, #ec38bc, #fdeff9);
+    padding: 40px 60px;
+}
+
+h2 {
+    font-size: 3em;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.game {
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    font-size: 5em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.reset {
+    padding: 15px 20px;
+    width: 100%;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:focus {
+    color: #ec38bc;
+    background-color: #262809;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after {
+    transform: rotateY(180deg);
+}
+
+
+.tela-final {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    background-color: #ec38bcb9;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.tela-final h1 {
+    font-size: 5rem;
+}
+
+.tela-final button {
+    padding: 15px 20px;
+    width: 50%;
+    color: #000000;
+    background-color: #f5f2f2;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.lives {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    gap: 1rem;
+}
+
+#vidas {
+    padding: 5px;
+}
